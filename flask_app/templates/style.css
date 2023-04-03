@@ -1,0 +1,9 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#card-container img {
+    width: 300px;
+    height: 450px;
+}

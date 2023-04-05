@@ -21,7 +21,7 @@ def welcome():
     if not "user_id" in session:
         return redirect("/")
     user = User.get_by_id({'id': session['user_id']})
-    # all_cards = Card.get_all()
+    all_cards = Card.get_all()
     return render_template('welcome.html', user = user)
 
 @app.route("/users/register", methods=["POST"])
@@ -76,10 +76,10 @@ def update_user(id):
     User.update(data)
     return redirect("/welcome")
 
-@app.route("/my_magazines")
-def my_magazines():
-    if not "user_id" in session:
-        return redirect("/")
-    user = User.get_by_id({'id':session['user_id']})
-    magazines = Magazine.get_all_by_id({'id':session['user_id']})
-    return render_template("my_magazines.html", user = user, magazines = magazines)
+# @app.route("/my_magazines")
+# def my_magazines():
+#     if not "user_id" in session:
+#         return redirect("/")
+#     user = User.get_by_id({'id':session['user_id']})
+#     magazines = Magazine.get_all_by_id({'id':session['user_id']})
+#     return render_template("my_magazines.html", user = user, magazines = magazines)

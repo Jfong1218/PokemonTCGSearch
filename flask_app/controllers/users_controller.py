@@ -76,10 +76,3 @@ def update_user(id):
     User.update(data)
     return redirect("/welcome")
 
-# @app.route("/my_magazines")
-# def my_magazines():
-#     if not "user_id" in session:
-#         return redirect("/")
-#     user = User.get_by_id({'id':session['user_id']})
-#     magazines = Magazine.get_all_by_id({'id':session['user_id']})
-#     return render_template("my_magazines.html", user = user, magazines = magazines)

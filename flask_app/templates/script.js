@@ -1,4 +1,5 @@
 console.log("hello script is working")
+// URL = "https://api.pokemontcg.io/v2/cards"
 URL = "https://api.pokemontcg.io/v2/cards?q=name:"
 
 function getPoke(event){
@@ -11,8 +12,8 @@ function getPoke(event){
     fetch(URL+pokeName)
         .then(response => response.json())
         .then (data => {
-            // console.log(data)
-            // console.log(data.data[0]["name"])
+            console.log(data)
+            console.log(data.data[0]["name"])
             var result = ""
             for(var i=0; i<data.data.length; i++){
                 console.log(data.data[i].images.large);
@@ -35,4 +36,4 @@ function getPoke(event){
 <div class='row' id='card-container'>
 
 </div>
-</div> */}
+</div>  */}
